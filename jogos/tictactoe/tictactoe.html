@@ -1,0 +1,42 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="tictactoe.css">
+</head>
+<body>
+  <header class="navbar">
+    <nav class="nav-icons">
+      <a href="../../index.html" class="nav-item"><img src="../../assets/icons/home.svg" alt="Home"></a>
+      <a href="#" class="nav-item"><img src="../../assets/icons/user.svg" alt="Perfil"></a>
+      <a href="#" class="nav-item"><img src="../../assets/icons/rank.svg" alt="Ranking"></a>
+    </nav>
+    <div class="theme-toggle">
+      <input type="checkbox" id="themeSwitch">
+      <label for="themeSwitch" class="switch"></label>
+    </div>
+  </header>
+
+  <main class="tictactoe-container">
+    <h1 class="titulo">Jogo da Velha</h1>
+    <div class="board" id="board">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+    </div>
+    <p id="status" class="status-text"></p>
+    <button onclick="startGame()" class="btn-restart">Reiniciar</button>
+  </main>
+
+  <script src="../../main.js"></script>
+  <script src="tictactoe.js"></script>
+</body>
+</html>

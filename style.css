@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+  
+  :root {
+    --bg: #ffffff;
+    --text: #000000;
+    --nav-bg: rgba(255, 255, 255, 0.8);
+  }
+  
+  body.dark {
+    --bg: #000000;
+    --text: #ffffff;
+    --nav-bg: rgba(0, 0, 0, 0.8);
+  }
+  
+  .navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--nav-bg);
+    padding: 10px 30px;
+    border-radius: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-item img {
+    width: 24px;
+    height: 24px;
+    filter: invert(0);
+    transition: filter 0.3s;
+  }
+  
+  body.dark .nav-item img {
+    filter: invert(1);
+  }
+  
+  .theme-toggle {
+    margin-left: auto;
+  }
+  
+  .switch {
+    width: 40px;
+    height: 20px;
+    background: var(--nav-bg);
+    display: inline-block;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  .switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+  
+  input[type="checkbox"]:checked + .switch::after {
+    transform: translateX(20px);
+  }
+  
+  body.light .switch {
+    background: conic-gradient(from 180deg at center, red, orange, yellow, green, blue, indigo, violet, red);
+    animation: slow-spin 20s linear infinite;
+  }
+  
+  @keyframes slow-spin {
+    to { transform: rotate(1turn); }
+  }
