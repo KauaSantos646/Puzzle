@@ -1,52 +1,70 @@
-let board = ["", "", "", "", "", "", "", "", ""];
+const board = document.getElementById("board");
+const message = document.getElementById("message");
+
 let currentPlayer = "X";
-let gameActive = true;
+let cells = [];
 
-function startGame() {
-  board = ["", "", "", "", "", "", "", "", ""];
-  currentPlayer = "X";
-  gameActive = true;
-  updateBoard();
-  document.getElementById("status").textContent = `Vez de: ${currentPlayer}`;
+function createBoard() {
+  board.innerHTML = "";
+  cells = [];
+
+  for (let i = 0; i < 9; i++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    cell.addEventListener("click", () => makeMove(i));
+    board.appendChild(cell);
+    cells.push("");
+  }
+
+  message.textContent = "Vez do jogador X";
 }
 
-function updateBoard() {
-  const cells = document.querySelectorAll(".cell");
-  cells.forEach((cell, index) => {
-    cell.textContent = board[index];
-    cell.onclick = () => handleMove(index);
-  });
-}
+function makeMove(index) {
+  if (cells[index] !== "") return;
 
-function handleMove(index) {
-  if (!gameActive || board[index] !== "") return;
-  board[index] = currentPlayer;
-  updateBoard();
-  checkWinner();
+  const cell = board.children[index];
+  cells[index] = currentPlayer;
+  cell.textContent = currentPlayer;
+  cell.classList.add(currentPlayer.toLowerCase());
+
+  if (checkWin(currentPlayer)) {
+    message.textContent = `Jogador ${currentPlayer} venceu!`;
+    disableBoard();
+
+    setTimeout(() => {
+      createBoard();
+    }, 1000);
+    return;
+  }
+
+  if (cells.every(c => c !== "")) {
+    message.textContent = "Empate!";
+    setTimeout(() => {
+      createBoard();
+    }, 2000);
+    return;
+  }
+
   currentPlayer = currentPlayer === "X" ? "O" : "X";
-  document.getElementById("status").textContent = `Vez de: ${currentPlayer}`;
+  message.textContent = `Vez do jogador ${currentPlayer}`;
 }
 
-function checkWinner() {
+function checkWin(player) {
   const winPatterns = [
-    [0,1,2],[3,4,5],[6,7,8], // linhas
-    [0,3,6],[1,4,7],[2,5,8], // colunas
-    [0,4,8],[2,4,6]          // diagonais
+    [0,1,2],[3,4,5],[6,7,8],
+    [0,3,6],[1,4,7],[2,5,8],
+    [0,4,8],[2,4,6]
   ];
 
-  for (const pattern of winPatterns) {
-    const [a, b, c] = pattern;
-    if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-      document.getElementById("status").textContent = `Vitória de ${board[a]}!`;
-      gameActive = false;
-      return;
-    }
-  }
+  return winPatterns.some(pattern =>
+    pattern.every(index => cells[index] === player)
+  );
+}
 
-  if (!board.includes("")) {
-    document.getElementById("status").textContent = "Empate!";
-    gameActive = false;
+function disableBoard() {
+  for (let i = 0; i < board.children.length; i++) {
+    board.children[i].style.pointerEvents = "none";
   }
 }
 
-startGame();
+createBoard();

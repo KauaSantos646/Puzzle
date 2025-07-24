@@ -1,83 +1,98 @@
-body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    transition: background 0.5s ease, color 0.5s ease;
-  }
-  
-  :root {
-    --bg: #ffffff;
-    --text: #000000;
-    --nav-bg: rgba(255, 255, 255, 0.8);
-  }
-  
-  body.dark {
-    --bg: #000000;
-    --text: #ffffff;
-    --nav-bg: rgba(0, 0, 0, 0.8);
-  }
-  
-  .navbar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--nav-bg);
-    padding: 10px 30px;
-    border-radius: 30px;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    z-index: 10;
-    backdrop-filter: blur(10px);
-  }
-  
-  .nav-item img {
-    width: 24px;
-    height: 24px;
-    filter: invert(0);
-    transition: filter 0.3s;
-  }
-  
-  body.dark .nav-item img {
-    filter: invert(1);
-  }
-  
-  .theme-toggle {
-    margin-left: auto;
-  }
-  
-  .switch {
-    width: 40px;
-    height: 20px;
-    background: var(--nav-bg);
-    display: inline-block;
-    border-radius: 10px;
-    position: relative;
-  }
-  
-  .switch::after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 16px;
-    height: 16px;
-    background: white;
-    border-radius: 50%;
-    transition: transform 0.3s;
-  }
-  
-  input[type="checkbox"]:checked + .switch::after {
-    transform: translateX(20px);
-  }
-  
-  body.light .switch {
-    background: conic-gradient(from 180deg at center, red, orange, yellow, green, blue, indigo, violet, red);
-    animation: slow-spin 20s linear infinite;
-  }
-  
-  @keyframes slow-spin {
-    to { transform: rotate(1turn); }
-  }
+.painel-jogos {
+  background-color: var(--painel-bg);
+  box-shadow: var(--painel-sombra);
+  border-radius: 20px;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-tile .logo-card {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.2),
+    -4px -4px 8px rgba(255, 255, 255, 0.1);
+  margin: auto;
+  transition: transform 0.3s ease;
+}
+
+.game-tile {
+  text-decoration: none;
+  color: inherit;
+}
+
+.game-title {
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.game-tile:hover {
+  transform: scale(1.05);
+}
+
+.logo-card img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.game-title {
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+
+:root {
+  --painel-bg: #ffffff;
+  --painel-sombra: 8px 8px 20px rgba(0, 0, 0, 0.15);
+  --text-color: #222;
+}
+
+
+[data-theme="dark"] {
+  --painel-bg: #303030;
+  --painel-sombra: none;
+  --text-color: #fff;
+}
+
+[data-theme="dark"] .game-tile img {
+  filter: brightness(0) invert(1);
+}
+
+.jogos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 60px auto;
+}
+
+.jogos-grid a:nth-child(7) {
+  grid-column: 2 / 3; 
+}
+
+.janela-jogos {
+  background-color: var(--bg-paper);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+  margin: 0 auto;
+  max-width: 1100px;
+  transition: background-color 0.3s ease;
+}

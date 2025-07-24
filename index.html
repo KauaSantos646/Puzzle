@@ -1,24 +1,92 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Puzzle</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puzzle de Minijogos</title>
+  <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <nav class="nav-icons">
-      <a href="index.html" class="nav-item"><img src="assets/icons/home.svg" alt="Home"></a>
-      <a href="#" class="nav-item"><img src="assets/icons/user.svg" alt="Perfil"></a>
-      <a href="#" class="nav-item"><img src="assets/icons/rank.svg" alt="Ranking"></a>
-    </nav>
-    <div class="theme-toggle">
-      <input type="checkbox" id="themeSwitch">
-      <label for="themeSwitch" class="switch"></label>
-    </div>
+  <header>
+    <button title="Home">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    </button>
+    <button title="Perfil" onclick="window.location.href='perfil.html'">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.6 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+    </button>
+    <button title="Ranking" onclick="window.location.href='ranking.html'">
+      <svg viewBox="0 0 24 24"><path d="M7 17h3v-7H7v7zm7-10v10h3V7h-3zm-10 8v4h18v-4H4z"/></svg>
+    </button>
   </header>
 
-  <main class="game-menu">
-    <a href="jogos/tictactoe/tictactoe.html" class="game-button">Jogo da Velha</a>
-    <!-- outros botões dos jogos aqui -->
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <main style="padding-top: 100px; text-align: center;">
+    <h1>Bem-vindo ao Puzzle de Minijogos!</h1>
+    <p>Escolha um jogo para começar:</p>
+
+    <div class="janela-jogos">
+    <div class="jogos-grid">
+  <a href="jogos/tictactoe/tictactoe.html" class="game-tile">
+    <div class="logo-card">
+      <img src="assets/logos/TicTacToe.png" alt="Jogo da Velha" />
+    </div>
+    <span class="game-title">Jogo da Velha</span>
+  </a>
+
+  <a href="jogos/tictactoeSemEmpate/tictactoe-solo.html" class="game-tile">
+    <div class="logo-card">
+      <img src="assets/logos/Sempate.png" alt="Sem Empate" />
+    </div>
+    <span class="game-title">Sem Empate</span>
+  </a>
+
+  <a href="jogos/batalhanaval/batalha-naval.html" class="game-tile">
+    <div class="logo-card">
+      <img src="assets/logos/BatalhaNaval.png" alt="Batalha Naval" />
+    </div>
+    <span class="game-title">Batalha Naval</span>
+  </a>
+
+  <a href="jogos/damas/damas.html" class="game-tile">
+    <div class="logo-card">
+      <img src="assets/logos/damas.png" alt="Damas" />
+    </div>
+    <span class="game-title">Damas</span>
+  </a>
+
+  <a href="jogos/ppt/pedra-papel-tesoura.html" class="game-tile">
+    <div class="logo-card">
+      <img src="assets/logos/ppt.png" alt="Pedra Papel Tesoura" />
+    </div>
+    <span class="game-title">Pedra Papel Tesoura</span>
+  </a>
+
+  <a href="jogos/quedablocos/queda-blocos.html" class="game-tile">
+    <div class="logo-card">
+      <img src="assets/logos/QuedadeBlocos.png" alt="Queda de Blocos" />
+    </div>
+    <span class="game-title">Queda de Blocos</span>
+  </a>
+
+  <a href="jogos/xadrez/xadrez.html" class="game-tile">
+    <div class="logo-card">
+      <img src="assets/logos/xadrez.png" alt="Xadrez" />
+    </div>
+    <span class="game-title">Xadrez</span>
+  </a>
+</div>
+      </a>
+    </div>
+    </div>
   </main>
+
+  <script src="js/tema.js"></script>
+</body>
+</html>

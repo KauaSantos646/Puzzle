@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tic Tac Toe (Sem Empate)</title>
+  <link rel="stylesheet" href="../../css/global.css" />
+  <link rel="stylesheet" href="../../jogos/tictactoeSemEmpate/tictactoe-solo.css"/>
+</head>
+<body data-theme="light">
+  <header> 
+    <button title="Home" onclick="window.location.href='../../index.html'">
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    </button>
+    <button title="Perfil" onclick="window.location.href='../../perfil.html'">
+      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.6 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+    </button>
+    <button title="Ranking" onclick="window.location.href='../../ranking.html'">
+      <svg viewBox="0 0 24 24"><path d="M7 17h3v-7H7v7zm7-10v10h3V7h-3zm-10 8v4h18v-4H4z"/></svg>
+    </button> 
+  </header>
+
+  <main class="janela-jogo">
+    <h1>Tic Tac Toe (Sem Empate)</h1>
+
+    <div id="game-container">
+      <div id="game-container">
+      <div id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+      </div>
+      <div id="message"></div>
+  </main>
+
+  <script src="../../js/tema.js"></script>
+  <script src="/jogos/tictactoeSemEmpate/tictactoe-solo.js"></script>
+</body>
+</html>

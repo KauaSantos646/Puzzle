@@ -1,0 +1,51 @@
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  font-size: 2em;
+  text-align: center;
+  line-height: 80px;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 12px;
+  transition: transform 0.2s;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+}
+
+.cell.X {
+  color: red;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+
+.cell.O {
+  color: blue;
+  text-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+}
+
+#message {
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+#restartBtn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+}

@@ -2,12 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tic Tac Toe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Damas</title>
   <link rel="stylesheet" href="../../css/global.css" />
-  <link rel="stylesheet" href="../../jogos/tictactoe/tictactoe.css"/>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body data-theme="light">
+<body>
   <header> 
     <button title="Home" onclick="window.location.href='../../index.html'">
       <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
@@ -17,29 +17,18 @@
     </button>
     <button title="Ranking" onclick="window.location.href='../../ranking.html'">
       <svg viewBox="0 0 24 24"><path d="M7 17h3v-7H7v7zm7-10v10h3V7h-3zm-10 8v4h18v-4H4z"/></svg>
-    </button> 
-</header>
-
-  <main class="janela-jogo">
-    <h1>Tic Tac Toe</h1>
-
-    <div id="game-container">
-      <div id="board">
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-        <div class="cell" data-cell></div>
-      </div>
-      <div id="message"></div>
-    </div>
+    </button>
+ </header>
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+  <main style="padding-top: 100px; text-align:center;">
+    <h1>Damas</h1>
   </main>
-
   <script src="../../js/tema.js"></script>
-  <script src="tictactoe.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
