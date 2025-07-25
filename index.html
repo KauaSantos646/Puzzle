@@ -19,6 +19,29 @@
       <svg viewBox="0 0 24 24"><path d="M7 17h3v-7H7v7zm7-10v10h3V7h-3zm-10 8v4h18v-4H4z"/></svg>
     </button>
   </header>
+  
+  <div id="auth-modal" class="modal">
+    <div class="modal-content">
+      <div class="tabs">
+        <button id="tab-login" class="active">Login</button>
+        <button id="tab-register">Registrar</button>
+      </div>
+  
+      <form id="login-form" class="form active">
+        <input type="Nome" id="login-nome" placeholder="Nome" required />
+        <input type="password" id="login-senha" placeholder="Senha" required />
+        <button type="submit">Entrar</button>
+      </form>
+  
+      <form id="register-form" class="form">
+        <input type="text" id="register-nome" placeholder="Nome" required />
+        <input type="email" id="register-email" placeholder="Email" required />
+        <input type="password" id="register-senha" placeholder="Senha" required />
+        <input type="password" id="register-confirmar" placeholder="Confirmar Senha" required />
+        <button type="submit">Registrar</button>
+      </form>
+    </div>
+  </div>
 
   <div class="theme-toggle">
     <label class="switch">
@@ -26,6 +49,7 @@
       <span class="slider"></span>
     </label>
   </div>
+
 
   <main style="padding-top: 100px; text-align: center;">
     <h1>Bem-vindo ao Puzzle de Minijogos!</h1>
@@ -87,6 +111,7 @@
     </div>
   </main>
 
-  <script src="js/tema.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>
