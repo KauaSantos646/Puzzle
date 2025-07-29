@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ranking</title>
+  <title>Perfil</title>
   <link rel="stylesheet" href="css/global.css" />
 </head>
 <body>
@@ -11,15 +11,15 @@
     <button title="Home" onclick="window.location.href='index.html'">
       <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
     </button>
-    <button title="Perfil" onclick="window.location.href='perfil.html'">
-      <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.6 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+    <button title="Perfil" id="open-auth-modal" type="button">
+    <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.2 4.8-4.8S14.7 2.4 12 2.4 7.2 4.6 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
     </button>
-    <button title="Ranking">
+    <button title="Ranking" onclick="window.location.href='ranking.html'">
       <svg viewBox="0 0 24 24"><path d="M7 17h3v-7H7v7zm7-10v10h3V7h-3zm-10 8v4h18v-4H4z"/></svg>
     </button>
   </header>
 
-  <div class="theme-toggle">    
+  <div class="theme-toggle">
     <label class="switch">
       <input type="checkbox" id="themeToggle" />
       <span class="slider"></span>
@@ -27,20 +27,9 @@
   </div>
 
   <main style="padding-top: 100px; text-align:center;">
-    <h1>Ranking</h1>
+    <h1>Perfil do Jogador</h1>
   </main>
 
-  <script src="js/tema.js"></script>
-  <h1>Ranking Tic Tac Toe</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Jogador</th>
-        <th>Vitórias</th>
-      </tr>
-    </thead>
-    <tbody id="rankingBody"></tbody>
-  </table>
+  <script src="./js/auth.js"></script>
 </body>
 </html>
-
